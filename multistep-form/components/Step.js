@@ -4,17 +4,31 @@ import Question from './Question'
 import styles from '../styles/Home.module.css'
 
 const Step = () => {
+    // Keep the cound of the current steps
     /* Check if there are any answers for the selected question if not skip to the next one */
+    // Handle back button in a case where there are some steps skipped due to the absence of the right questions
     
     const {data: steps, isLoading, error} = useFetch("http://localhost:3001/steps/")
-    const [chosenAnswers, setChosenAnswers] = useState([])
+    const [currentStep, setCurrentStep] = useState(0)
+    const [chosenAnswers, setChosenAnswers] = useState([{
+        "steps": [
+            {
+                "id": 0,
+                "question" : "",
+                "answer": "",
+                "expert": ""
+            }
+        ] 
+    }])
 
     const updateChosenAnswer = (value) => {
-        // 
+        
     } 
 
     const handleClick = (value) => {
         console.log(value);
+        setCurrentStep(currentStep++)
+        // updateChosenAnswer(value)
     }
 
     return (
@@ -22,9 +36,9 @@ const Step = () => {
             <form>
                 {error && <div>{error}</div>}
                 {isLoading && <div>Loading...</div>}
-                {steps.length > 0 && steps.map(step => (
-                    <Question key={step.id} step={step} handleClick={handleClick}></Question>
-                ))}
+                {   !isLoading && 
+                    <Question key={steps[currentStep].id} step={steps[currentStep]} handleClick={handleClick}></Question>
+                }
             </form>
 		</div>
     )
