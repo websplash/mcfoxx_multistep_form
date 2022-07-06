@@ -36,6 +36,8 @@
   padding: 20px;
 }
 
-/* .step-container {
-
-} */
+.goBack {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid black;
+}

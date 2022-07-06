@@ -25,6 +25,11 @@ const Step = () => {
         
     } 
 
+    const handleBackButton = () => {
+        console.log("click");
+        setCurrentStep(currentStep - 1)
+    }
+
     const handleClick = (value) => {
         console.log(value);
         setCurrentStep(currentStep++)
@@ -39,6 +44,7 @@ const Step = () => {
                 {   !isLoading && 
                     <Question key={steps[currentStep].id} step={steps[currentStep]} handleClick={handleClick}></Question>
                 }
+                {currentStep > 0 && <div className={styles.goBack} onClick={()=> handleBackButton()}>Go Back</div>}
             </form>
 		</div>
     )
