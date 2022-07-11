@@ -1,0 +1,84 @@
+{
+  "steps": [
+    {
+      "id": 1,
+      "question": "Hallo, wobei können wir dir helfen?",
+      "answers": [
+        {
+          "id": "Q11",
+          "body": "Problemlösung",
+          "stepId": 1,
+          "value": "problem"
+        },
+        {
+          "id": "Q12",
+          "body": "Beratung",
+          "stepId": 1,
+          "value": "beratung"
+        },
+        {
+          "id": "Q13",
+          "body": "Kostenloser Rückruf",
+          "stepId": 1,
+          "value": "rueckruf"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Welches Gerät ist von dem Problem betroffen?",
+      "answers": [
+        {
+          "id": "Q21",
+          "prevAns": [
+            "problem"
+          ],
+          "body": "PC/Laptop",
+          "stepId": 22,
+          "value": "pc"
+        },
+        {
+          "id": "Q22",
+          "prevAns": [
+            "beratung"
+          ],
+          "body": "Smartphone/ Tablet",
+          "stepId": 2,
+          "value": "mobile"
+        },
+        {
+          "id": "Q23",
+          "prevAns": [
+            "beratung"
+          ],
+          "body": "Drucker",
+          "stepId": 2,
+          "value": "drucker"
+        },
+        {
+          "id": "Q24",
+          "prevAns": [
+            "rueckruf"
+          ],
+          "body": "Internet",
+          "stepId": 2,
+          "value": "internet"
+        },
+        {
+          "id": "Q26",
+          "prevAns": [
+            "rueckruf",
+            "beratung",
+            "problem"
+          ],
+          "body": "ein andered Gerät",
+          "stepId": 2,
+          "value": "anderes"
+        }
+      ]
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
