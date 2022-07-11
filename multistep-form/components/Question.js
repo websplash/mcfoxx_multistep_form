@@ -9,8 +9,8 @@ const Question = ({step, handleClick}) => {
         <div className='answersSelection'>
 
             {step.answers.map(answer => (
-                <div key={answer.id} className='answerWrapper' onClick={() => handleClick(answer)}>
-                    <input type="radio" id={answer.value} name={answer.value} value={answer.value}></input>
+                <div key={answer.id} className='answerWrapper'>
+                    <input type="radio" id={answer.value} name={answer.value} value={answer.value} onClick={() => handleClick(answer, step.question)}></input>
                     <label htmlFor={answer.value}>{answer.body}</label>
                 </div>
 
