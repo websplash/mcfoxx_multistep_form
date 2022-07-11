@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import {React, useState, useEffect} from 'react'
 import useFetch from '../useFetch'
 import Question from './Question'
 import styles from '../styles/Home.module.css'
@@ -10,41 +10,112 @@ const Step = () => {
     
     const {data: steps, isLoading, error} = useFetch("http://localhost:3001/steps/")
     const [currentStep, setCurrentStep] = useState(0)
-    const [chosenAnswers, setChosenAnswers] = useState([{
-        "steps": [
-            {
-                "id": 0,
-                "question" : "",
-                "answer": "",
-                "expert": ""
-            }
-        ] 
-    }])
+    const [chosenAnswers, setChosenAnswers] = useState({            
+        "steps": [],
+        "expert": "", 
+    })
+    const [filteredStep, setFilteredStep] = useState(null)
 
-    const updateChosenAnswer = (value) => {
-        
-    } 
+    useEffect(() => {
+        if(!isLoading){
+            console.log("runs");
+            filterStep();
+        }
+    }, [isLoading]);
+
+    const filterStep = (counter = currentStep, newChosenAnswers = steps) =>{
+
+        if(counter != steps.length){
+
+            if( counter !== 0){
+                
+                let filteredtempAns = steps[counter]?.answers?.filter((ans)=> {
+                    let returnValue = false
+                    if(returnValue == false){
+                        
+                        ans?.prevAns?.forEach(answer => {
+                            if(answer == newChosenAnswers.steps[0].answer){
+                                returnValue = true
+                            }
+                        });
+                        
+                    }
+                    
+                    if(returnValue){
+                        return ans
+                    }
+                    
+               })
+               console.log(filteredtempAns);
+    
+               let tempStep = {
+                    "id": steps[counter].id,
+                    "question": steps[counter].question,
+                    "answers": filteredtempAns
+                }
+    
+               setFilteredStep(tempStep)
+               
+            }else{
+                setFilteredStep(steps[0])
+            }
+
+        }else{
+            setFilteredStep(null)
+        }
+
+    }
 
     const handleBackButton = () => {
-        console.log("click");
+        // On back remove previous answer
+
+        let removedLast = chosenAnswers?.steps?.concat();
+        removedLast.pop();
+
+        setChosenAnswers({ steps: removedLast})
         setCurrentStep(currentStep - 1)
-    }
 
-    const handleClick = (value) => {
-        console.log(value);
-        setCurrentStep(currentStep++)
-        // updateChosenAnswer(value)
+        filterStep(currentStep - 1, { steps: removedLast})
     }
-
+    
+    const handleClick = (answer, question) => {
+        // Create a sample answer object
+        let chosenAnswer = {
+            "id": answer.id,
+            "question" : question,
+            "answer": answer.value,
+        }
+        
+        // https://stackoverflow.com/questions/62918710/how-to-update-state-with-usestate-in-an-array-of-objects
+        
+        // Add the selected answer to the existing array of objects
+        let newChosenAnswers = {...chosenAnswers, steps: [...chosenAnswers.steps, chosenAnswer]}
+        setChosenAnswers(newChosenAnswers)
+        
+        setCurrentStep(currentStep + 1)
+        filterStep(currentStep + 1, newChosenAnswers)
+        
+    }
+    
     return (
         <div className={`${styles.container} `}>
+            <h2>Latest selection: 
+                {chosenAnswers?.steps.map(step => {
+                    return <div key={step.id}>{step.answer}</div>
+                })}
+            </h2>
             <form>
                 {error && <div>{error}</div>}
                 {isLoading && <div>Loading...</div>}
-                {   !isLoading && 
-                    <Question key={steps[currentStep].id} step={steps[currentStep]} handleClick={handleClick}></Question>
+                {   
+                    filteredStep &&
+                    <Question key={filteredStep.id} step={filteredStep} handleClick={handleClick}></Question>
                 }
-                {currentStep > 0 && <div className={styles.goBack} onClick={()=> handleBackButton()}>Go Back</div>}
+                {   steps.length == currentStep &&
+                    <div>This was the last step</div> 
+                }
+                {currentStep > 0 && <div className={styles.goBack} onClick={ ()=> handleBackButton() }>Go Back</div>}
+
             </form>
 		</div>
     )

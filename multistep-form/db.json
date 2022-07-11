@@ -67,7 +67,9 @@
         {
           "id": "Q26",
           "prevAns": [
-            "rueckruf"
+            "rueckruf",
+            "beratung",
+            "problem"
           ],
           "body": "ein andered Gerät",
           "stepId": 2,

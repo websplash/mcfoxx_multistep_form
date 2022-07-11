@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 
 const Question = ({step, handleClick}) => {
 
+  // console.log(step[0]);
   return (
     <div className={styles.questionContainer}>
         <h2>{step.question}</h2>
