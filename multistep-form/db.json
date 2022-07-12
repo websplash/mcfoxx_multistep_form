@@ -2,66 +2,67 @@
   "steps": [
     {
       "id": 1,
+      "style": "icon-text-large",
       "question": "Hallo, wobei können wir dir helfen?",
+      "subtitle": "Wir brauchen Details von dir, damit wir dir schnell und effektiv helfen können. Keine Sorge, das geht ganz einfach und dauert nur wenige Sekunden.",
       "answers": [
         {
           "id": "Q11",
           "body": "Problemlösung",
-          "stepId": 1,
-          "value": "problem"
+          "value": "problem",
+          "icon": "answerSvgs/icon_questionMark.svg"
         },
         {
           "id": "Q12",
           "body": "Beratung",
-          "stepId": 1,
-          "value": "beratung"
+          "value": "beratung",
+          "icon": "answerSvgs/icon_exclamationMark.svg"
         },
         {
           "id": "Q13",
           "body": "Kostenloser Rückruf",
-          "stepId": 1,
-          "value": "rueckruf"
+          "value": "rueckruf",
+          "icon": "answerSvgs/icon_phone.svg"
         }
       ]
     },
     {
       "id": 2,
+      "style": "icon-text-medium",
       "question": "Welches Gerät ist von dem Problem betroffen?",
       "answers": [
         {
           "id": "Q21",
           "prevAns": [
-            "problem"
+            "problem",
+            "beratung"
           ],
           "body": "PC/Laptop",
-          "stepId": 22,
           "value": "pc"
         },
         {
           "id": "Q22",
           "prevAns": [
-            "beratung"
+            "beratung",
+            "problem"
           ],
           "body": "Smartphone/ Tablet",
-          "stepId": 2,
           "value": "mobile"
         },
         {
           "id": "Q23",
           "prevAns": [
-            "beratung"
+            "problem"
           ],
           "body": "Drucker",
-          "stepId": 2,
           "value": "drucker"
         },
         {
           "id": "Q24",
           "prevAns": [
-            "rueckruf"
+            "problem"
           ],
           "body": "Internet",
-          "stepId": 2,
           "value": "internet"
         },
         {
@@ -72,8 +73,46 @@
             "problem"
           ],
           "body": "ein andered Gerät",
-          "stepId": 2,
           "value": "anderes"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "style": "icon-text-small",
+      "question": "Welches Betriebsystem hat das Gerät?",
+      "answers": [
+        {
+          "id": "Q31",
+          "prevAns": [
+            "pc"
+          ],
+          "body": "Windows",
+          "value": "windows"
+        },
+        {
+          "id": "Q32",
+          "prevAns": [
+            "pc"
+          ],
+          "body": "Apple/Mac",
+          "value": "apple"
+        },
+        {
+          "id": "Q33",
+          "prevAns": [
+            "mobile"
+          ],
+          "body": "Android",
+          "value": "android"
+        },
+        {
+          "id": "Q34",
+          "prevAns": [
+            "mobile"
+          ],
+          "body": "IOS",
+          "value": "ios"
         }
       ]
     }

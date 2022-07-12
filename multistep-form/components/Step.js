@@ -26,49 +26,61 @@ const Step = () => {
     const filterStep = (counter = currentStep, newChosenAnswers = steps) =>{
 
         if(counter != steps.length){
-
+    
             if( counter !== 0){
+                // Not first or last step
+                console.log("not first");
                 
-                let filteredtempAns = steps[counter]?.answers?.filter((ans)=> {
+                let filteredtempAns = steps[counter]?.answers?.filter((answer)=> {
                     let returnValue = false
-                    if(returnValue == false){
                         
-                        ans?.prevAns?.forEach(answer => {
-                            if(answer == newChosenAnswers.steps[0].answer){
-                                returnValue = true
-                            }
-                        });
+                    answer?.prevAns?.filter(answerDependency => {
+
+                        // if(returnValue == false){
+                        if(answerDependency == newChosenAnswers.steps[counter -1].answer){
+                            returnValue = true
+                        }
+                        // }
+
                         
-                    }
+
+                        return returnValue
+                    
+                    });
                     
                     if(returnValue){
-                        return ans
+                        return answer
                     }
                     
-               })
-               console.log(filteredtempAns);
-    
-               let tempStep = {
+                })
+
+                
+                let tempStep = {
                     "id": steps[counter].id,
                     "question": steps[counter].question,
                     "answers": filteredtempAns
                 }
-    
-               setFilteredStep(tempStep)
-               
+                
+                setFilteredStep(tempStep)
+                
             }else{
+                // First step
+                console.log("first");
                 setFilteredStep(steps[0])
             }
-
+            
         }else{
+            // Last step
+            console.log("last");
             setFilteredStep(null)
         }
 
     }
 
     const handleBackButton = () => {
-        // On back remove previous answer
+        // ** Missing feature - If question is skipped and back button is pressed
 
+        // On back remove previous answer
         let removedLast = chosenAnswers?.steps?.concat();
         removedLast.pop();
 
