@@ -6,18 +6,23 @@ const Question = ({step, handleClick}) => {
 
   // console.log(step[0]);
   return (
-    <div className={styles.questionContainer}>
-        <h2>{step?.question && step.question}</h2>
-        <h3>{step?.subtitle && step.subtitle}</h3>
-        <div className='answersSelection'>
+    <div className={`${styles.questionContainer} ${styles[step?.theClass]}`}>
+        <h2 className={styles.questionTitle}>{step?.question && step?.question}</h2>
+        <p className={styles.questionSubTitle}>{step?.subtitle !== "" && step?.subtitle}</p>
 
+        <div className={styles.answersContainer}>
             {step.answers.map(answer => (
-                <div key={answer.id} className='answerWrapper'>
-                    <input type="radio" id={answer.value} name={answer.value} value={answer.value} onClick={() => handleClick(answer, step.question)}></input>
-                    <label htmlFor={answer.value}>{answer.body}
-                      {answer?.icon &&
-                        <Image src={`/${answer.icon}`} alt={`${answer.value} icon`} width="150" height="150"></Image>
-                      }
+                <div key={answer?.id} className={`${styles.answersWrapper} ${styles[answer?.theClass]}`}>
+                    <input className={styles.hiddenInput} type="radio" id={answer?.value} name={answer?.value} value={answer?.value} onClick={() => handleClick(answer, step.question)}></input>
+                    <label className={styles.answerContainer} htmlFor={answer?.value}>
+                        <div className={styles.theAnswerWrapper}>
+                          {answer?.icon &&
+                            <div className={styles.questionIcon} >
+                              <Image src={`/${answer?.icon}`} alt={`${answer?.value} icon`} width="50" height="50"></Image>
+                            </div>
+                          }
+                          {answer?.body && <p>{answer?.body}</p>}
+                        </div>
                     </label>
                 </div>
 

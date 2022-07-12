@@ -57,7 +57,9 @@ const Step = () => {
                 
                 let tempStep = {
                     "id": steps[counter].id,
+                    "theClass": steps[counter].theClass,
                     "question": steps[counter].question,
+                    "subtitle": steps[counter].subtitle,
                     "answers": filteredtempAns
                 }
                 

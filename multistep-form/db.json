@@ -2,7 +2,7 @@
   "steps": [
     {
       "id": 1,
-      "style": "icon-text-large",
+      "theClass": "icon-text-large",
       "question": "Hallo, wobei können wir dir helfen?",
       "subtitle": "Wir brauchen Details von dir, damit wir dir schnell und effektiv helfen können. Keine Sorge, das geht ganz einfach und dauert nur wenige Sekunden.",
       "answers": [
@@ -10,26 +10,30 @@
           "id": "Q11",
           "body": "Problemlösung",
           "value": "problem",
-          "icon": "answerSvgs/icon_questionMark.svg"
+          "icon": "answerSvgs/icon_questionMark.svg",
+          "theClass": ""
         },
         {
           "id": "Q12",
           "body": "Beratung",
           "value": "beratung",
-          "icon": "answerSvgs/icon_exclamationMark.svg"
+          "icon": "answerSvgs/icon_exclamationMark.svg",
+          "theClass": ""
         },
         {
           "id": "Q13",
           "body": "Kostenloser Rückruf",
           "value": "rueckruf",
-          "icon": "answerSvgs/icon_phone.svg"
+          "icon": "answerSvgs/icon_phone.svg",
+          "theClass": ""
         }
       ]
     },
     {
       "id": 2,
-      "style": "icon-text-medium",
+      "theClass": "icon-text-medium",
       "question": "Welches Gerät ist von dem Problem betroffen?",
+      "subtitle": "",
       "answers": [
         {
           "id": "Q21",
@@ -38,7 +42,9 @@
             "beratung"
           ],
           "body": "PC/Laptop",
-          "value": "pc"
+          "value": "pc",
+          "icon": "answerSvgs/icon_laptop.svg",
+          "theClass": ""
         },
         {
           "id": "Q22",
@@ -47,7 +53,9 @@
             "problem"
           ],
           "body": "Smartphone/ Tablet",
-          "value": "mobile"
+          "value": "mobile",
+          "icon": "answerSvgs/icon_smartphone.svg",
+          "theClass": ""
         },
         {
           "id": "Q23",
@@ -55,7 +63,9 @@
             "problem"
           ],
           "body": "Drucker",
-          "value": "drucker"
+          "value": "drucker",
+          "icon": "answerSvgs/icon_drucker.svg",
+          "theClass": ""
         },
         {
           "id": "Q24",
@@ -63,7 +73,9 @@
             "problem"
           ],
           "body": "Internet",
-          "value": "internet"
+          "value": "internet",
+          "icon": "answerSvgs/icon_internet.svg",
+          "theClass": ""
         },
         {
           "id": "Q26",
@@ -73,14 +85,16 @@
             "problem"
           ],
           "body": "ein andered Gerät",
-          "value": "anderes"
+          "value": "anderes",
+          "theClass": "answerOther"
         }
       ]
     },
     {
       "id": 3,
-      "style": "icon-text-small",
+      "theClass": "icon-text-small",
       "question": "Welches Betriebsystem hat das Gerät?",
+      "subtitle": "",
       "answers": [
         {
           "id": "Q31",

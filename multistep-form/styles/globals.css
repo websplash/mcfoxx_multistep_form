@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #4c5356;
+  --accent-color: #ec6708;
+  --white: #fff;
+
+  --text-color: #333;
+  --text-light: #fff;
+}
+
 html,
 body {
   padding: 0;
@@ -20,5 +29,6 @@ h2,
 h3,
 h4,
 p {
-  margin-top: 0;
+  margin: 0;
+  padding: 0;
 }
