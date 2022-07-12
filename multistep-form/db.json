@@ -3,7 +3,7 @@
     {
       "id": 1,
       "theClass": "icon-text-large",
-      "question": "Hallo, wobei können wir dir helfen?",
+      "question": "Hallo Ramin, wobei können wir dir helfen?",
       "subtitle": "Wir brauchen Details von dir, damit wir dir schnell und effektiv helfen können. Keine Sorge, das geht ganz einfach und dauert nur wenige Sekunden.",
       "answers": [
         {
@@ -11,21 +11,24 @@
           "body": "Problemlösung",
           "value": "problem",
           "icon": "answerSvgs/icon_questionMark.svg",
-          "theClass": ""
+          "theClass": "",
+          "description": "Ich habe ein technisches Problem, das ich zeitnah lösen möchte."
         },
         {
           "id": "Q12",
           "body": "Beratung",
           "value": "beratung",
           "icon": "answerSvgs/icon_exclamationMark.svg",
-          "theClass": ""
+          "theClass": "",
+          "description": "Ich möchte mich zu einem TechnischenThema professionell Beraten lassen."
         },
         {
           "id": "Q13",
           "body": "Kostenloser Rückruf",
           "value": "rueckruf",
           "icon": "answerSvgs/icon_phone.svg",
-          "theClass": ""
+          "theClass": "",
+          "description": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit."
         }
       ]
     },
@@ -102,7 +105,9 @@
             "pc"
           ],
           "body": "Windows",
-          "value": "windows"
+          "value": "windows",
+          "icon": "answerSvgs/icon_windows.svg",
+          "theClass": ""
         },
         {
           "id": "Q32",
@@ -110,7 +115,9 @@
             "pc"
           ],
           "body": "Apple/Mac",
-          "value": "apple"
+          "value": "apple",
+          "icon": "answerSvgs/icon_apple.svg",
+          "theClass": ""
         },
         {
           "id": "Q33",
@@ -118,7 +125,9 @@
             "mobile"
           ],
           "body": "Android",
-          "value": "android"
+          "value": "android",
+          "icon": "answerSvgs/icon_android.svg",
+          "theClass": ""
         },
         {
           "id": "Q34",
@@ -126,12 +135,11 @@
             "mobile"
           ],
           "body": "IOS",
-          "value": "ios"
+          "value": "ios",
+          "icon": "answerSvgs/icon_apple.svg",
+          "theClass": ""
         }
       ]
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -1,5 +1,5 @@
 .container {
-  padding: 0 2rem;
+  padding: 0rem;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -8,7 +8,7 @@
 
 .main {
   min-height: 90vh;
-  padding: 4rem 0;
+  padding: 0rem 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,12 @@
 }
 
 .questionContainer {
-  border: 1px solid black;
+  margin-top: 30px;
   padding: 40px;
+}
+
+.questionTitle {
+  margin-bottom: 20px;
 }
 
 .questionTitle,
@@ -37,69 +41,100 @@
 
 .questionSubTitle {
   margin-bottom: 50px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Start the questions container styles */
-.answersContainer {
+.allAnswersContainer {
   display: flex;
   flex-wrap: wrap;
 }
 
-.icon-text-large {}
+/* .icon-text-large {}
 
 .icon-text-medium {}
 
-.icon-text-medium .answersContainer {
+.icon-text-small {} */
+
+.icon-text-small .allAnswersContainer,
+.icon-text-medium .allAnswersContainer {
   justify-content: center;
+  height: 100%;
 }
 
-.answersWrapper {
+.answerContainer {
   margin: 0 30px 30px 0;
   width: calc(25% - 30px);
-  padding: 20px;
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  cursor: pointer;
 }
 
-.icon-text-medium .answersWrapper {
+.answerContainerInner {
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+}
+
+.icon-text-small .answerContainer,
+.icon-text-medium .answerContainer {
   max-width: 170px;
 }
 
 .icon-text-medium .answerOther {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: unset;
+}
+
+.icon-text-medium .answerOther .answerContainerInner {
   width: 40%;
-  max-width: 300px;
+  max-width: 320px;
 }
 
-.icon-text-large .answersWrapper {
-  height: 100%;
+.icon-text-large .answerContainer {
   width: calc(33% - 50px);
-  padding: 30px;
-}
-
-.icon-text-large .answersWrapper:not(:last-child) {
   margin: 0 50px 50px 0;
 }
 
-.answersWrapper:hover {
+.icon-text-large .answerContainer:last-child {
+  margin: 0 0px 50px 0;
+}
+
+.answerContainer:hover .answerContainerInner {
   background-color: var(--accent-color);
+}
+
+.answerLabel {
+  display: block;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.icon-text-large .answerLabel {
+  padding: 30px;
 }
 
 .hiddenInput {
   display: none;
 }
 
-.theAnswerWrapper {
+.answerWrapper {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
 }
 
-.theAnswerWrapper p {
+.answerWrapper p {
+  margin-top: 20px;
+}
+
+.answerWrapper h3,
+.answerWrapper p {
   color: var(--text-light);
   text-align: center;
 }
@@ -108,16 +143,24 @@
   margin-bottom: 20px;
 }
 
-.answerContainer {}
-
 
 /* End the questions container styles */
 
 .goBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
+  max-width: 150px;
   cursor: pointer;
-  padding: 10px;
-  border: 1px solid black;
+  padding: 15px;
+  background: var(--light-grey);
+  color: var(--text-light);
+  border-radius: 10px;
+}
+
+.goBack:hover {
+  background-color: var(--accent-color);
 }
 
 .footer {

@@ -1,18 +1,35 @@
+@font-face {
+  font-family: "AbelPro-Bold";
+  src: url('../asset/Abel_Pro_Family/AbelProBold/font.woff2') format('woff2'), url('../asset/Abel_Pro_Family/AbelProBold/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: "AbelPro";
+  src: url('../asset/Abel_Pro_Family/AbelPro/font.woff2') format('woff2'), url('../asset/Abel_Pro_Family/AbelPro/font.woff') format('woff');
+}
+
 :root {
   --primary-color: #4c5356;
-  --accent-color: #ec6708;
+  --accent-color: #ec6707;
+  --light-grey: #a4acb1;
   --white: #fff;
 
   --text-color: #333;
   --text-light: #fff;
 }
 
-html,
+* {}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "AbelPro";
+  font-size: 20px;
 }
 
 a {
@@ -20,8 +37,14 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.bold,
+h1,
+h2,
+h3,
+h4 {
+  font-family: "AbelPro-Bold";
+  font-size: 1em;
+  font-weight: 800;
 }
 
 h1,
@@ -31,4 +54,8 @@ h4,
 p {
   margin: 0;
   padding: 0;
+}
+
+p {
+  font-weight: 400;
 }

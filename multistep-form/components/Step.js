@@ -4,7 +4,7 @@ import Question from './Question'
 import styles from '../styles/Home.module.css'
 
 const Step = () => {
-    // Keep the cound of the current steps
+    // Keep the count of the current steps
     /* Check if there are any answers for the selected question if not skip to the next one */
     // Handle back button in a case where there are some steps skipped due to the absence of the right questions
     
@@ -42,8 +42,6 @@ const Step = () => {
                         }
                         // }
 
-                        
-
                         return returnValue
                     
                     });
@@ -53,7 +51,6 @@ const Step = () => {
                     }
                     
                 })
-
                 
                 let tempStep = {
                     "id": steps[counter].id,
@@ -80,7 +77,6 @@ const Step = () => {
     }
 
     const handleBackButton = () => {
-        // ** Missing feature - If question is skipped and back button is pressed
 
         // On back remove previous answer
         let removedLast = chosenAnswers?.steps?.concat();
@@ -93,14 +89,13 @@ const Step = () => {
     }
     
     const handleClick = (answer, question) => {
+
         // Create a sample answer object
         let chosenAnswer = {
             "id": answer.id,
             "question" : question,
             "answer": answer.value,
         }
-        
-        // https://stackoverflow.com/questions/62918710/how-to-update-state-with-usestate-in-an-array-of-objects
         
         // Add the selected answer to the existing array of objects
         let newChosenAnswers = {...chosenAnswers, steps: [...chosenAnswers.steps, chosenAnswer]}
@@ -113,9 +108,9 @@ const Step = () => {
     
     return (
         <div className={`${styles.container} `}>
-            <h2>Latest selection: 
+            <h2>The selections:  
                 {chosenAnswers?.steps.map(step => {
-                    return <div key={step.id}>{step.answer}</div>
+                    return <span key={step.id}> {step.answer},</span>
                 })}
             </h2>
             <form>
@@ -128,7 +123,7 @@ const Step = () => {
                 {   steps.length == currentStep &&
                     <div>This was the last step</div> 
                 }
-                {currentStep > 0 && <div className={styles.goBack} onClick={ ()=> handleBackButton() }>Go Back</div>}
+                {currentStep > 0 && <div className={styles.goBack} onClick={ ()=> handleBackButton() }>Zuruck</div>}
 
             </form>
 		</div>
