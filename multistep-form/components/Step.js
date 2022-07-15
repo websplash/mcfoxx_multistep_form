@@ -25,6 +25,14 @@ const Step = () => {
 
     const filterStep = (counter = currentStep, newChosenAnswers = steps) =>{
 
+        // **************
+        // **************
+        // Pottencially use comma separated answers then have all of the answers store the specific paths to active it. (will probably need a panel for this)
+        // Then maybe try and do this for the questions too?
+
+        // **************
+        // **************
+
         if(counter != steps.length){
     
             if( counter !== 0){
@@ -47,13 +55,15 @@ const Step = () => {
                     });
                     
                     if(returnValue){
-                        return answer
+                        return true
                     }
                     
+                    return false
                 })
                 
                 let tempStep = {
                     "id": steps[counter].id,
+                    "component": steps[counter].component,
                     "theClass": steps[counter].theClass,
                     "question": steps[counter].question,
                     "subtitle": steps[counter].subtitle,
@@ -62,13 +72,13 @@ const Step = () => {
                 
                 setFilteredStep(tempStep)
                 
-            }else{
+            } else{
                 // First step
                 console.log("first");
                 setFilteredStep(steps[0])
             }
             
-        }else{
+        } else{
             // Last step
             console.log("last");
             setFilteredStep(null)
@@ -77,19 +87,16 @@ const Step = () => {
     }
 
     const handleBackButton = () => {
-
         // On back remove previous answer
         let removedLast = chosenAnswers?.steps?.concat();
         removedLast.pop();
 
         setChosenAnswers({ steps: removedLast})
         setCurrentStep(currentStep - 1)
-
         filterStep(currentStep - 1, { steps: removedLast})
     }
     
     const handleClick = (answer, question) => {
-
         // Create a sample answer object
         let chosenAnswer = {
             "id": answer.id,
@@ -100,10 +107,8 @@ const Step = () => {
         // Add the selected answer to the existing array of objects
         let newChosenAnswers = {...chosenAnswers, steps: [...chosenAnswers.steps, chosenAnswer]}
         setChosenAnswers(newChosenAnswers)
-        
         setCurrentStep(currentStep + 1)
         filterStep(currentStep + 1, newChosenAnswers)
-        
     }
     
     return (
@@ -120,7 +125,8 @@ const Step = () => {
                     filteredStep &&
                     <Question key={filteredStep.id} step={filteredStep} handleClick={handleClick}></Question>
                 }
-                {   steps.length == currentStep &&
+                {   
+                    steps.length == currentStep &&
                     <div>This was the last step</div> 
                 }
                 {currentStep > 0 && <div className={styles.goBack} onClick={ ()=> handleBackButton() }>Zuruck</div>}

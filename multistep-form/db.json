@@ -2,38 +2,40 @@
   "steps": [
     {
       "id": 1,
+      "component": "QuestionBox",
       "theClass": "icon-text-large",
       "question": "Hallo Ramin, wobei können wir dir helfen?",
       "subtitle": "Wir brauchen Details von dir, damit wir dir schnell und effektiv helfen können. Keine Sorge, das geht ganz einfach und dauert nur wenige Sekunden.",
       "answers": [
         {
           "id": "Q11",
-          "body": "Problemlösung",
+          "title": "Problemlösung ",
+          "body": "Ich habe ein technisches Problem, das ich zeitnah lösen möchte.",
           "value": "problem",
           "icon": "answerSvgs/icon_questionMark.svg",
-          "theClass": "",
-          "description": "Ich habe ein technisches Problem, das ich zeitnah lösen möchte."
+          "theClass": ""
         },
         {
           "id": "Q12",
-          "body": "Beratung",
+          "title": "Beratung",
+          "body": "Ich möchte mich zu einem TechnischenThema professionell Beraten lassen.",
           "value": "beratung",
           "icon": "answerSvgs/icon_exclamationMark.svg",
-          "theClass": "",
-          "description": "Ich möchte mich zu einem TechnischenThema professionell Beraten lassen."
+          "theClass": ""
         },
         {
           "id": "Q13",
-          "body": "Kostenloser Rückruf",
+          "title": "Kostenloser Rückruf",
+          "body": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit.",
           "value": "rueckruf",
           "icon": "answerSvgs/icon_phone.svg",
-          "theClass": "",
-          "description": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit."
+          "theClass": ""
         }
       ]
     },
     {
       "id": 2,
+      "component": "QuestionBox",
       "theClass": "icon-text-medium",
       "question": "Welches Gerät ist von dem Problem betroffen?",
       "subtitle": "",
@@ -95,6 +97,7 @@
     },
     {
       "id": 3,
+      "component": "QuestionBox",
       "theClass": "icon-text-small",
       "question": "Welches Betriebsystem hat das Gerät?",
       "subtitle": "",
@@ -138,6 +141,73 @@
           "value": "ios",
           "icon": "answerSvgs/icon_apple.svg",
           "theClass": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "component": "QuestionTrueOrFalse",
+      "theClass": "trueOrFalse",
+      "question": "Lässt sich das Gerät noch einschalten?",
+      "subtitle": "",
+      "answers": [
+        {
+          "id": "Q41",
+          "prevAns": [
+            "windows",
+            "ios",
+            "android",
+            "apple"
+          ],
+          "body": "Ja",
+          "value": "ja",
+          "icon": "answerSvgs/icon_windows.svg",
+          "theClass": "yesAnswer",
+          "subQuestion": {
+            "id": 1,
+            "component": "QuestionTrueOrFalse",
+            "theClass": "trueOrFalse",
+            "question": "...und hat es eine Internetverbindung?",
+            "subtitle": "",
+            "answers": [
+              {
+                "id": "Q4-11",
+                "prevAns": [
+                  "windows"
+                ],
+                "body": "Ja",
+                "value": "ja",
+                "icon": "answerSvgs/icon_windows.svg",
+                "theClass": "yesAnswer"
+              },
+              {
+                "id": "Q4-12",
+                "prevAns": [
+                  "windows",
+                  "ios",
+                  "android",
+                  "apple"
+                ],
+                "body": "Nein",
+                "value": "nein",
+                "icon": "answerSvgs/icon_apple.svg",
+                "theClass": "noAnswer"
+              }
+            ]
+          }
+        },
+        {
+          "id": "Q42",
+          "prevAns": [
+            "windows",
+            "ios",
+            "android",
+            "apple"
+          ],
+          "body": "Nein",
+          "value": "nein",
+          "icon": "answerSvgs/icon_apple.svg",
+          "theClass": "noAnswer"
         }
       ]
     }
