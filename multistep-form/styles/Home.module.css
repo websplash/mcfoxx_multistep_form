@@ -50,8 +50,11 @@
   opacity: 0;
 }
 
-/* Start the questions container Base styles */
+.show-opacity {
+  opacity: 1;
+}
 
+/* Start the questions container Base styles */
 .allAnswersContainer {
   display: flex;
   justify-content: center;

@@ -10,8 +10,8 @@ const Question = ({step, handleClick}) => {
   // const [showHide, setShowHide] = useState("")
 
   const handleSubQuestion = () => {
-    setShowHide("")
-    console.log("click");
+    setShowHide("show-opacity")
+    console.log("sub question");
   }
 
   return (
@@ -23,6 +23,7 @@ const Question = ({step, handleClick}) => {
 
           {step.answers.map(answer => (
               <>
+                {/* Rendering the normal grey box questions */}
                 {step.component == "QuestionBox" &&
                     <QuestionBox key={answer.id} step={step} answer={answer} handleClick={handleClick}></QuestionBox>}
 

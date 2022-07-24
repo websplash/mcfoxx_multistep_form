@@ -175,8 +175,8 @@
                 "prevAns": [
                   "windows"
                 ],
-                "body": "Ja",
-                "value": "ja",
+                "body": "Jas",
+                "value": "ja-ja",
                 "icon": "answerSvgs/icon_windows.svg",
                 "theClass": "yesAnswer"
               },
@@ -188,8 +188,8 @@
                   "android",
                   "apple"
                 ],
-                "body": "Nein",
-                "value": "nein",
+                "body": "Neins",
+                "value": "ja-nein",
                 "icon": "answerSvgs/icon_apple.svg",
                 "theClass": "noAnswer"
               }

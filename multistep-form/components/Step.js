@@ -24,12 +24,11 @@ const Step = () => {
     }, [isLoading]);
 
     const filterStep = (counter = currentStep, newChosenAnswers = steps) =>{
-
+        console.log("filter");
         // **************
         // **************
         // Pottencially use comma separated answers then have all of the answers store the specific paths to active it. (will probably need a panel for this)
         // Then maybe try and do this for the questions too?
-
         // **************
         // **************
 
@@ -74,19 +73,18 @@ const Step = () => {
                 
             } else{
                 // First step
-                console.log("first");
                 setFilteredStep(steps[0])
             }
             
         } else{
             // Last step
-            console.log("last");
             setFilteredStep(null)
         }
 
     }
 
     const handleBackButton = () => {
+        console.log("Handle back");
         // On back remove previous answer
         let removedLast = chosenAnswers?.steps?.concat();
         removedLast.pop();
@@ -97,6 +95,7 @@ const Step = () => {
     }
     
     const handleClick = (answer, question) => {
+        console.log("Handle Click");
         // Create a sample answer object
         let chosenAnswer = {
             "id": answer.id,
