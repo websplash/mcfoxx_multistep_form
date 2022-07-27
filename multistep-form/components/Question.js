@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import QuestionBox from './Question_Templates/QuestionBox'
 import QuestionTrueOrFalse from './Question_Templates/QuestionTrueOrFalse'
+import PostCode from './Question_Templates/PostCode'
 
 const Question = ({step, handleClick, handleShowNext}) => {
   
@@ -23,8 +24,7 @@ const Question = ({step, handleClick, handleShowNext}) => {
         {step?.subtitle !== "" && <p className={styles.questionSubTitle}>{step?.subtitle}</p>}
 
         <div className={`${styles.allAnswersContainer} ${styles[stateClass && "selectedOption" ]}`}>
-
-          {step.answers.map(answer => (
+          {(step.component == "QuestionBox" || step.component == "QuestionTrueOrFalse") && step.answers.map(answer => (
               <>
                 {/* Rendering the normal grey box questions */}
                 {step.component == "QuestionBox" &&
@@ -57,6 +57,12 @@ const Question = ({step, handleClick, handleShowNext}) => {
 
             </div>
 
+          }
+
+          { step.component == "PostCode" && 
+
+            <PostCode step={step} handleClick={handleClick}/>
+            
           }
           
         </div>

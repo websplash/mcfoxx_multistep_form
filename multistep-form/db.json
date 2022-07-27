@@ -6,9 +6,10 @@
       "theClass": "icon-text-large",
       "question": "Hallo Ramin, wobei können wir dir helfen?",
       "subtitle": "Wir brauchen Details von dir, damit wir dir schnell und effektiv helfen können. Keine Sorge, das geht ganz einfach und dauert nur wenige Sekunden.",
+      "showNext": false,
       "answers": [
         {
-          "id": "Q11",
+          "id": "Q1-1",
           "title": "Problemlösung ",
           "body": "Ich habe ein technisches Problem, das ich zeitnah lösen möchte.",
           "value": "problem",
@@ -16,7 +17,7 @@
           "theClass": ""
         },
         {
-          "id": "Q12",
+          "id": "Q1-2",
           "title": "Beratung",
           "body": "Ich möchte mich zu einem TechnischenThema professionell Beraten lassen.",
           "value": "beratung",
@@ -24,7 +25,7 @@
           "theClass": ""
         },
         {
-          "id": "Q13",
+          "id": "Q1-3",
           "title": "Kostenloser Rückruf",
           "body": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit.",
           "value": "rueckruf",
@@ -39,9 +40,10 @@
       "theClass": "icon-text-medium",
       "question": "Welches Gerät ist von dem Problem betroffen?",
       "subtitle": "",
+      "showNext": false,
       "answers": [
         {
-          "id": "Q21",
+          "id": "Q2-1",
           "prevAns": [
             "problem",
             "beratung"
@@ -52,7 +54,7 @@
           "theClass": ""
         },
         {
-          "id": "Q22",
+          "id": "Q2-2",
           "prevAns": [
             "beratung",
             "problem"
@@ -63,7 +65,7 @@
           "theClass": ""
         },
         {
-          "id": "Q23",
+          "id": "Q2-3",
           "prevAns": [
             "problem"
           ],
@@ -73,7 +75,7 @@
           "theClass": ""
         },
         {
-          "id": "Q24",
+          "id": "Q2-4",
           "prevAns": [
             "problem"
           ],
@@ -83,7 +85,7 @@
           "theClass": ""
         },
         {
-          "id": "Q26",
+          "id": "Q2-5",
           "prevAns": [
             "rueckruf",
             "beratung",
@@ -101,9 +103,10 @@
       "theClass": "icon-text-small",
       "question": "Welches Betriebsystem hat das Gerät?",
       "subtitle": "",
+      "showNext": false,
       "answers": [
         {
-          "id": "Q31",
+          "id": "Q3-1",
           "prevAns": [
             "pc"
           ],
@@ -113,7 +116,7 @@
           "theClass": ""
         },
         {
-          "id": "Q32",
+          "id": "Q3-2",
           "prevAns": [
             "pc"
           ],
@@ -123,7 +126,7 @@
           "theClass": ""
         },
         {
-          "id": "Q33",
+          "id": "Q3-3",
           "prevAns": [
             "mobile"
           ],
@@ -133,7 +136,7 @@
           "theClass": ""
         },
         {
-          "id": "Q34",
+          "id": "Q3-4",
           "prevAns": [
             "mobile"
           ],
@@ -150,9 +153,10 @@
       "theClass": "trueOrFalse",
       "question": "Lässt sich das Gerät noch einschalten?",
       "subtitle": "",
+      "showNext": false,
       "answers": [
         {
-          "id": "Q41",
+          "id": "Q4-1",
           "prevAns": [
             "windows",
             "ios",
@@ -171,7 +175,7 @@
             "subtitle": "",
             "answers": [
               {
-                "id": "Q4-11",
+                "id": "Q4-1-1",
                 "prevAns": [
                   "windows"
                 ],
@@ -181,7 +185,7 @@
                 "theClass": "yesAnswer"
               },
               {
-                "id": "Q4-12",
+                "id": "Q4-1-2",
                 "prevAns": [
                   "windows",
                   "ios",
@@ -197,7 +201,7 @@
           }
         },
         {
-          "id": "Q42",
+          "id": "Q4-2",
           "prevAns": [
             "windows",
             "ios",
@@ -217,9 +221,10 @@
       "theClass": "text-no-icon",
       "question": "Worum geht es genau?",
       "subtitle": "",
+      "showNext": true,
       "answers": [
         {
-          "id": "Q51",
+          "id": "Q5-1",
           "prevAns": [
             "ja-nein",
             "ja",
@@ -231,7 +236,7 @@
           "theClass": "textarea"
         },
         {
-          "id": "Q52",
+          "id": "Q5-2",
           "prevAns": [
             "ja-nein",
             "ja",
@@ -243,7 +248,7 @@
           "theClass": "textarea"
         },
         {
-          "id": "Q53",
+          "id": "Q5-3",
           "prevAns": [
             "ja-nein",
             "ja",
@@ -255,7 +260,7 @@
           "theClass": "textarea"
         },
         {
-          "id": "Q54",
+          "id": "Q5-4",
           "prevAns": [
             "ja-nein",
             "ja",
@@ -267,6 +272,73 @@
           "theClass": "textarea"
         }
       ]
+    },
+    {
+      "id": 6,
+      "component": "PostCode",
+      "theClass": "",
+      "question": "Wir benötigen deine PLZ, damit wir dir die für dich verfügbaren Leistungen anzeigen können.",
+      "subtitle": "",
+      "showNext": false
+    },
+    {
+      "id": 7,
+      "component": "QuestionBox",
+      "theClass": "icon-text-large",
+      "question": "Super, wir sind ganz in deiner Nähe!",
+      "subtitle": "Wir brauchen Details von dir, damit wir dir schnell und effektiv helfen können. Keine Sorge, das geht ganz einfach und dauert nur wenige Sekunden.",
+      "showNext": false,
+      "answers": [
+        {
+          "id": "Q7-1",
+          "prevAns": [
+            "remote",
+            "in-person"
+          ],
+          "title": "Problemlösung ",
+          "body": "Ich habe ein technisches Problem, das ich zeitnah lösen möchte.",
+          "value": "vor-ort-service",
+          "icon": "answerSvgs/icon_questionMark.svg",
+          "theClass": ""
+        },
+        {
+          "id": "Q7-2",
+          "prevAns": [
+            "remote",
+            "in-person"
+          ],
+          "title": "Beratung",
+          "body": "Ich möchte mich zu einem TechnischenThema professionell Beraten lassen.",
+          "value": "fern-tel-support",
+          "icon": "answerSvgs/icon_exclamationMark.svg",
+          "theClass": ""
+        },
+        {
+          "id": "Q7-3",
+          "prevAns": [
+            "in-person"
+          ],
+          "title": "Kostenloser Rückruf",
+          "body": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit.",
+          "value": "bring-in-express",
+          "icon": "answerSvgs/icon_phone.svg",
+          "theClass": ""
+        },
+        {
+          "id": "Q7-4",
+          "prevAns": [
+            "in-person"
+          ],
+          "title": "Kostenloser Rückruf",
+          "body": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit.",
+          "value": "bring-in-termin",
+          "icon": "answerSvgs/icon_phone.svg",
+          "theClass": ""
+        }
+      ]
     }
+  ],
+  "postCodes": [
+    "53225,53115,53117,53111,53119,53121,53123"
   ]
 }

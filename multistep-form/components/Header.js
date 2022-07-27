@@ -1,11 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 const Header = () => {
   return (
     <header className={styles.header}>
-        <Image src={`/mcfoxx_logo.svg`} alt={`mcfoxx logo`} width="100" height="100"></Image>
+      <Link href="/">
+        <a>
+          <Image src={`/mcfoxx_logo.svg`} alt={`mcfoxx logo`} width="130" height="130"></Image>
+        </a>
+      </Link>
     </header>
   )
 }

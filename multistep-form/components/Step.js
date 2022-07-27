@@ -19,7 +19,7 @@ const Step = () => {
         "show" : false,
         "answer" : '', 
         "question" : ''
-    })
+    })   
 
     useEffect(() => {
         if(!isLoading){
@@ -34,6 +34,7 @@ const Step = () => {
         // **************
         // Pottencially use comma separated answers then have all of the answers store the specific paths to active it. (will probably need a panel for this)
         // Then maybe try and do this for the questions too?
+        // To retain previous values use React.useRef(0) for more information read here pls https://www.w3schools.com/react/react_useref.asp
         // **************
         // **************
 
@@ -97,10 +98,13 @@ const Step = () => {
         setChosenAnswers({ steps: removedLast})
         setCurrentStep(currentStep - 1)
         filterStep(currentStep - 1, { steps: removedLast})
+
+        showNext.show && setShowNext(!showNext.show)    
     }
     
     const handleClick = (answer, question) => {
         // Create a sample answer object
+
         let chosenAnswer = {
             "id": answer.id,
             "question" : question,
@@ -112,10 +116,13 @@ const Step = () => {
         setChosenAnswers(newChosenAnswers)
         setCurrentStep(currentStep + 1)
         filterStep(currentStep + 1, newChosenAnswers)
-        console.log(chosenAnswers);
+
+        console.log(newChosenAnswers);
+        showNext.show && setShowNext(!showNext.show)
     }
 
     const handleShowNext = (answer, question, condition) => {
+        console.log(answer);
         setShowNext({
             "show" : condition,
             "answer" : answer, 
@@ -139,7 +146,7 @@ const Step = () => {
                 }
                 {   
                     steps.length == currentStep &&
-                    <div>This was the last step</div> 
+                    <div>You went too far! nothing to see here. Please go back or refresh the page</div> 
                 }
 
                 <div className={styles.navigationBtns}>

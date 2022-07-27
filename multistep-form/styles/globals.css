@@ -12,6 +12,7 @@
   --primary-color: #4c5356;
   --accent-color: #ec6707;
   --light-grey: #a4acb1;
+  --placeholder-light-grey: #a4acb190;
   --white: #fff;
   --green: #328021;
   --red: #d90d0d;
@@ -63,6 +64,21 @@ p {
 textarea {
   font-size: .9em;
   line-height: 1.2em;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--placeholder-light-grey) !important;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--placeholder-light-grey) !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--placeholder-light-grey) !important;
 }
 
 .SVGmaskBefore:after {

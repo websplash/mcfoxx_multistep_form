@@ -8,11 +8,12 @@ const QuestionBox = ({answer, step, handleClick, handleShowNext, handleSelection
 
     const openTextarea = (answer, question) => {
         handleSelection(answer.id)
-        handleShowNext(answer, question, true)
+        handleShowNext({"id": answer.id, "value": problemDesc}, question, true)
     }
     
-    const handleTyping = (value, answer, question) => {
-        setProblemDesc(value)
+    const handleTyping = (text, answer, question) => {
+        console.log(text)
+        setProblemDesc(text)
     }
 
     return (
@@ -39,7 +40,7 @@ const QuestionBox = ({answer, step, handleClick, handleShowNext, handleSelection
             <div className={`${styles.testmodal}`}>
                 <div className={styles.testmodalContainer}>
                     <textarea placeholder='In diesem Textfeld kannst du uns weitere Informationen mitteilen, die uns helfen, dein Problem schneller zu lösen. Beispielsweise hilft uns eine detailliertere Problembeschreibung und die genaue Modellnummer deines Gerätes, sofern bekannt (diese steht oft auf der Rückseite deines Geräts)' 
-                        value={problemDesc} onChange={(e)=> handleTyping(e.value, answer, step.question)}></textarea>
+                        value={problemDesc} onChange={(e)=> handleTyping(e.target.value, answer, step.question)}></textarea>
                 </div>
             </div>
         }
