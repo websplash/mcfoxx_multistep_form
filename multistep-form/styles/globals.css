@@ -20,18 +20,16 @@
   --text-light: #fff;
 }
 
-* {}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font-family: "AbelPro";
   font-size: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -60,6 +58,11 @@ p {
 
 p {
   font-weight: 400;
+}
+
+textarea {
+  font-size: .9em;
+  line-height: 1.2em;
 }
 
 .SVGmaskBefore:after {

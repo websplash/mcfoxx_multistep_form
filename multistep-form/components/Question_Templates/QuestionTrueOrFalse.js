@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 
 const QuestionTrueOrFalse = ({answer, step, handleClick, handleSubQuestion}) => {
-    console.log("rerender");
+
     // KNOWN BUGS : Only the second level answer will be put into the answer history if in second layer
   return (
     <div key={answer?.id} className={`${styles.answerContainer} ${styles[answer?.theClass]}`}>

@@ -210,6 +210,63 @@
           "theClass": "noAnswer"
         }
       ]
+    },
+    {
+      "id": 5,
+      "component": "QuestionBox",
+      "theClass": "text-no-icon",
+      "question": "Worum geht es genau?",
+      "subtitle": "",
+      "answers": [
+        {
+          "id": "Q51",
+          "prevAns": [
+            "ja-nein",
+            "ja",
+            "ja-ja"
+          ],
+          "body": "Ein technisches Problem",
+          "value": "problem-1",
+          "icon": "",
+          "theClass": "textarea"
+        },
+        {
+          "id": "Q52",
+          "prevAns": [
+            "ja-nein",
+            "ja",
+            "ja-ja"
+          ],
+          "body": "Ein technisches Problem",
+          "value": "problem-2",
+          "icon": "",
+          "theClass": "textarea"
+        },
+        {
+          "id": "Q53",
+          "prevAns": [
+            "ja-nein",
+            "ja",
+            "ja-ja"
+          ],
+          "body": "Ein technisches Problem",
+          "value": "problem-3",
+          "icon": "",
+          "theClass": "textarea"
+        },
+        {
+          "id": "Q54",
+          "prevAns": [
+            "ja-nein",
+            "ja",
+            "ja-ja"
+          ],
+          "body": "Ein technisches Problem",
+          "value": "problem-4",
+          "icon": "",
+          "theClass": "textarea"
+        }
+      ]
     }
   ]
 }

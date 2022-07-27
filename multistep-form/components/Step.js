@@ -15,6 +15,11 @@ const Step = () => {
         "expert": "", 
     })
     const [filteredStep, setFilteredStep] = useState(null)
+    const [showNext, setShowNext] = useState({
+        "show" : false,
+        "answer" : '', 
+        "question" : ''
+    })
 
     useEffect(() => {
         if(!isLoading){
@@ -95,7 +100,6 @@ const Step = () => {
     }
     
     const handleClick = (answer, question) => {
-        console.log("Handle Click");
         // Create a sample answer object
         let chosenAnswer = {
             "id": answer.id,
@@ -108,27 +112,40 @@ const Step = () => {
         setChosenAnswers(newChosenAnswers)
         setCurrentStep(currentStep + 1)
         filterStep(currentStep + 1, newChosenAnswers)
+        console.log(chosenAnswers);
+    }
+
+    const handleShowNext = (answer, question, condition) => {
+        setShowNext({
+            "show" : condition,
+            "answer" : answer, 
+            "question" : question
+        })
     }
     
     return (
         <div className={`${styles.container} `}>
-            <h2>The selections:  
+            {/* <h2>The selections:  
                 {chosenAnswers?.steps.map(step => {
                     return <span key={step.id}> {step.answer},</span>
                 })}
-            </h2>
+            </h2> */}
             <form>
                 {error && <div>{error}</div>}
                 {isLoading && <div>Loading...</div>}
                 {   
                     filteredStep &&
-                    <Question key={filteredStep.id} step={filteredStep} handleClick={handleClick}></Question>
+                    <Question key={filteredStep.id} step={filteredStep} handleClick={handleClick} handleShowNext={handleShowNext}></Question>
                 }
                 {   
                     steps.length == currentStep &&
                     <div>This was the last step</div> 
                 }
-                {currentStep > 0 && <div className={styles.goBack} onClick={ ()=> handleBackButton() }>Zuruck</div>}
+
+                <div className={styles.navigationBtns}>
+                    {currentStep > 0 && <div className={styles.goBack} onClick={ ()=> handleBackButton() }>Zuruck</div>}
+                    {showNext?.show && <div className={styles.goBack} onClick={ ()=> handleClick(showNext.answer, showNext.question) }>Weiter</div>}
+                </div>
 
             </form>
 		</div>

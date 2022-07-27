@@ -19,15 +19,14 @@
 .header {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
-  border-bottom: 1px solid #eaeaea;
-  justify-content: center;
+  padding: 2rem 0 0 20px;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .questionContainer {
   margin-top: 30px;
-  padding: 40px;
+  padding: 40px 40px 20px 40px;
 }
 
 .questionTitle {
@@ -46,11 +45,11 @@
   margin-right: auto;
 }
 
-.hide-opacity {
+.hideElement {
   opacity: 0;
 }
 
-.show-opacity {
+.showElement {
   opacity: 1;
 }
 
@@ -97,7 +96,9 @@
 
 .icon-text-medium {}
 
-.icon-text-small {} */
+.icon-text-small {}
+
+.text-no-icon*/
 
 .icon-text-small .allAnswersContainer,
 .icon-text-medium .allAnswersContainer {
@@ -135,6 +136,10 @@
   padding: 30px;
 }
 
+.text-no-icon .answerLabel {
+  padding: 15px 10px;
+}
+
 .hiddenInput {
   display: none;
 }
@@ -164,6 +169,48 @@
 }
 
 /* End the grey questions container styles */
+/* Start Grey container with textarea */
+.text-no-icon .allAnswersContainer {
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-no-icon .allAnswersContainer textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 200px;
+  padding: 15px;
+}
+
+.text-no-icon .answerContainer {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0px 10px 0;
+  overflow: hidden;
+}
+
+.text-no-icon .testmodal {
+  padding: 30px 0 0 0;
+  /*Height of the textarea plus the margin */
+  margin-bottom: -220px;
+  transition: margin-bottom .25s linear;
+}
+
+.text-no-icon .allAnswersContainer.selectedOption .notSelected {
+  display: none !important;
+}
+
+.text-no-icon .answerContainer.selected .testmodal {
+  margin-bottom: 20px;
+}
+
+.text-no-icon .testmodalContainer {
+  display: flex;
+}
+
+/* End Grey container with textarea */
 /* Start True or False Component Styles */
 .trueOrFalse {
   flex-direction: column;
@@ -172,7 +219,6 @@
 
 .trueOrFalse .answerContainer {
   margin: 0 15px 30px 15px;
-  /* width: 130px; */
   width: calc(50% - 60px);
   height: 45px;
 }
@@ -302,11 +348,17 @@
 
 /* End the questions container styles */
 
+.navigationBtns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
 .goBack {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
   max-width: 150px;
   cursor: pointer;
   padding: 15px;

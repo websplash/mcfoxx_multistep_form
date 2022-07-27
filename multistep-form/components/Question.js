@@ -4,14 +4,17 @@ import styles from '../styles/Home.module.css'
 import QuestionBox from './Question_Templates/QuestionBox'
 import QuestionTrueOrFalse from './Question_Templates/QuestionTrueOrFalse'
 
-const Question = ({step, handleClick}) => {
+const Question = ({step, handleClick, handleShowNext}) => {
   
-  const [showHide, setShowHide] = useState("hide-opacity")
-  // const [showHide, setShowHide] = useState("")
+  const [showHide, setShowHide] = useState("hideElement")
+  const [stateClass, setStateClass] = useState(null)
 
   const handleSubQuestion = () => {
-    setShowHide("show-opacity")
-    console.log("sub question");
+    setShowHide("showElement")
+  }
+
+  const handleSelection = (id) => {
+    setStateClass(id)
   }
 
   return (
@@ -19,13 +22,13 @@ const Question = ({step, handleClick}) => {
         {step?.question && <h2 className={styles.questionTitle}>{step?.question}</h2>}
         {step?.subtitle !== "" && <p className={styles.questionSubTitle}>{step?.subtitle}</p>}
 
-        <div className={styles.allAnswersContainer}>
+        <div className={`${styles.allAnswersContainer} ${styles[stateClass && "selectedOption" ]}`}>
 
           {step.answers.map(answer => (
               <>
                 {/* Rendering the normal grey box questions */}
                 {step.component == "QuestionBox" &&
-                    <QuestionBox key={answer.id} step={step} answer={answer} handleClick={handleClick}></QuestionBox>}
+                    <QuestionBox key={answer.id} step={step} answer={answer} handleClick={handleClick} handleShowNext={handleShowNext} handleSelection={handleSelection} stateClass={answer?.id === stateClass ? 'selected' : 'notSelected'}></QuestionBox>}
 
                   {step.component == "QuestionTrueOrFalse" &&
                     <QuestionTrueOrFalse key={answer.id} step={step} answer={answer} handleClick={handleClick} handleSubQuestion={handleSubQuestion}></QuestionTrueOrFalse>}
