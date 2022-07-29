@@ -34,7 +34,9 @@ const Step = () => {
         // **************
         // Pottencially use comma separated answers then have all of the answers store the specific paths to active it. (will probably need a panel for this)
         // Then maybe try and do this for the questions too?
-        // To retain previous values use React.useRef(0) for more information read here pls https://www.w3schools.com/react/react_useref.asp
+        // To retain previous values use React.useRef() for more information read here pls https://www.w3schools.com/react/react_useref.asp
+        
+        // Figure out API Call on click
         // **************
         // **************
 
@@ -42,19 +44,15 @@ const Step = () => {
     
             if( counter !== 0){
                 // Not first or last step
-                console.log("not first");
                 
                 let filteredtempAns = steps[counter]?.answers?.filter((answer)=> {
                     let returnValue = false
                         
                     answer?.prevAns?.filter(answerDependency => {
 
-                        // if(returnValue == false){
                         if(answerDependency == newChosenAnswers.steps[counter -1].answer){
                             returnValue = true
                         }
-                        // }
-
                         return returnValue
                     
                     });
@@ -65,12 +63,31 @@ const Step = () => {
                     
                     return false
                 })
+
+                // Filtering the rigth question
+                let filteredtempQ = steps[counter]?.questions?.filter((question)=> {
+                    let returnValueQ = false
+                    question?.prevAns?.filter(questionDependency => {
+                        
+                        if(questionDependency == newChosenAnswers.steps[counter -1].answer || questionDependency === '__'){
+                            returnValueQ = true;
+                        }
+                        return returnValueQ;
+                    
+                    });
+                    
+                    if(returnValueQ){
+                        return true
+                    }
+                    
+                    return false
+                })
                 
                 let tempStep = {
                     "id": steps[counter].id,
                     "component": steps[counter].component,
                     "theClass": steps[counter].theClass,
-                    "question": steps[counter].question,
+                    "question": filteredtempQ[0].body,
                     "subtitle": steps[counter].subtitle,
                     "answers": filteredtempAns
                 }
@@ -78,8 +95,16 @@ const Step = () => {
                 setFilteredStep(tempStep)
                 
             } else{
-                // First step
-                setFilteredStep(steps[0])
+                // First step return in standart form
+                setFilteredStep({
+                    "id": steps[0].id,
+                    "component": steps[0].component,
+                    "theClass": steps[0].theClass,
+                    "question": steps[0].questions[0].body,
+                    "subtitle": steps[0].subtitle,
+                    "showNext": steps[0].showNext,
+                    "answers": steps[0].answers
+                })
             }
             
         } else{

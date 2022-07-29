@@ -18,8 +18,11 @@ const Question = ({step, handleClick, handleShowNext}) => {
     setStateClass(id)
   }
 
+  console.log(step);
   return (
     <div className={`${styles.questionContainer} ${styles[step?.theClass]}`}>
+
+        {/* Loop through the questions the same way your are looping through the answers and put the questions in the array then dependent on the previous answer */}
         {step?.question && <h2 className={styles.questionTitle}>{step?.question}</h2>}
         {step?.subtitle !== "" && <p className={styles.questionSubTitle}>{step?.subtitle}</p>}
 

@@ -4,12 +4,20 @@
       "id": 1,
       "component": "QuestionBox",
       "theClass": "icon-text-large",
-      "question": "Hallo Ramin, wobei können wir dir helfen?",
+      "questions": [
+        {
+          "id": "Q1-1",
+          "body": "Hallo Ramin, wobei können wir dir helfen?",
+          "prevAns": [
+            "__"
+          ]
+        }
+      ],
       "subtitle": "Wir brauchen Details von dir, damit wir dir schnell und effektiv helfen können. Keine Sorge, das geht ganz einfach und dauert nur wenige Sekunden.",
       "showNext": false,
       "answers": [
         {
-          "id": "Q1-1",
+          "id": "A1-1",
           "title": "Problemlösung ",
           "body": "Ich habe ein technisches Problem, das ich zeitnah lösen möchte.",
           "value": "problem",
@@ -17,7 +25,7 @@
           "theClass": ""
         },
         {
-          "id": "Q1-2",
+          "id": "A1-2",
           "title": "Beratung",
           "body": "Ich möchte mich zu einem TechnischenThema professionell Beraten lassen.",
           "value": "beratung",
@@ -25,7 +33,7 @@
           "theClass": ""
         },
         {
-          "id": "Q1-3",
+          "id": "A1-3",
           "title": "Kostenloser Rückruf",
           "body": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit.",
           "value": "rueckruf",
@@ -38,12 +46,20 @@
       "id": 2,
       "component": "QuestionBox",
       "theClass": "icon-text-medium",
-      "question": "Welches Gerät ist von dem Problem betroffen?",
+      "questions": [
+        {
+          "id": "Q1-1",
+          "body": "Welches Gerät ist von dem Problem betroffen?",
+          "prevAns": [
+            "__"
+          ]
+        }
+      ],
       "subtitle": "",
       "showNext": false,
       "answers": [
         {
-          "id": "Q2-1",
+          "id": "A2-1",
           "prevAns": [
             "problem",
             "beratung"
@@ -54,7 +70,7 @@
           "theClass": ""
         },
         {
-          "id": "Q2-2",
+          "id": "A2-2",
           "prevAns": [
             "beratung",
             "problem"
@@ -65,7 +81,7 @@
           "theClass": ""
         },
         {
-          "id": "Q2-3",
+          "id": "A2-3",
           "prevAns": [
             "problem"
           ],
@@ -75,7 +91,7 @@
           "theClass": ""
         },
         {
-          "id": "Q2-4",
+          "id": "A2-4",
           "prevAns": [
             "problem"
           ],
@@ -85,7 +101,7 @@
           "theClass": ""
         },
         {
-          "id": "Q2-5",
+          "id": "A2-5",
           "prevAns": [
             "rueckruf",
             "beratung",
@@ -101,12 +117,20 @@
       "id": 3,
       "component": "QuestionBox",
       "theClass": "icon-text-small",
-      "question": "Welches Betriebsystem hat das Gerät?",
+      "questions": [
+        {
+          "id": "Q1-1",
+          "body": "Welches Betriebsystem hat das Gerät?",
+          "prevAns": [
+            "__"
+          ]
+        }
+      ],
       "subtitle": "",
       "showNext": false,
       "answers": [
         {
-          "id": "Q3-1",
+          "id": "A3-1",
           "prevAns": [
             "pc"
           ],
@@ -116,7 +140,7 @@
           "theClass": ""
         },
         {
-          "id": "Q3-2",
+          "id": "A3-2",
           "prevAns": [
             "pc"
           ],
@@ -126,7 +150,7 @@
           "theClass": ""
         },
         {
-          "id": "Q3-3",
+          "id": "A3-3",
           "prevAns": [
             "mobile"
           ],
@@ -136,7 +160,7 @@
           "theClass": ""
         },
         {
-          "id": "Q3-4",
+          "id": "A3-4",
           "prevAns": [
             "mobile"
           ],
@@ -151,12 +175,20 @@
       "id": 4,
       "component": "QuestionTrueOrFalse",
       "theClass": "trueOrFalse",
-      "question": "Lässt sich das Gerät noch einschalten?",
+      "questions": [
+        {
+          "id": "Q1-1",
+          "body": "Lässt sich das Gerät noch einschalten?",
+          "prevAns": [
+            "__"
+          ]
+        }
+      ],
       "subtitle": "",
       "showNext": false,
       "answers": [
         {
-          "id": "Q4-1",
+          "id": "A4-1",
           "prevAns": [
             "windows",
             "ios",
@@ -171,28 +203,36 @@
             "id": 1,
             "component": "QuestionTrueOrFalse",
             "theClass": "trueOrFalse",
-            "question": "...und hat es eine Internetverbindung?",
+            "questions": [
+              {
+                "id": "Q1-1",
+                "body": "...und hat es eine Internetverbindung?",
+                "prevAns": [
+                  "__"
+                ]
+              }
+            ],
             "subtitle": "",
             "answers": [
               {
-                "id": "Q4-1-1",
+                "id": "A4-1-1",
                 "prevAns": [
                   "windows"
                 ],
-                "body": "Jas",
+                "body": "Ja",
                 "value": "ja-ja",
                 "icon": "answerSvgs/icon_windows.svg",
                 "theClass": "yesAnswer"
               },
               {
-                "id": "Q4-1-2",
+                "id": "A4-1-2",
                 "prevAns": [
                   "windows",
                   "ios",
                   "android",
                   "apple"
                 ],
-                "body": "Neins",
+                "body": "Nein",
                 "value": "ja-nein",
                 "icon": "answerSvgs/icon_apple.svg",
                 "theClass": "noAnswer"
@@ -201,7 +241,7 @@
           }
         },
         {
-          "id": "Q4-2",
+          "id": "A4-2",
           "prevAns": [
             "windows",
             "ios",
@@ -219,12 +259,20 @@
       "id": 5,
       "component": "QuestionBox",
       "theClass": "text-no-icon",
-      "question": "Worum geht es genau?",
+      "questions": [
+        {
+          "id": "Q1-1",
+          "body": "Worum geht es genau?",
+          "prevAns": [
+            "__"
+          ]
+        }
+      ],
       "subtitle": "",
       "showNext": true,
       "answers": [
         {
-          "id": "Q5-1",
+          "id": "A5-1",
           "prevAns": [
             "ja-nein",
             "ja",
@@ -236,7 +284,7 @@
           "theClass": "textarea"
         },
         {
-          "id": "Q5-2",
+          "id": "A5-2",
           "prevAns": [
             "ja-nein",
             "ja",
@@ -248,7 +296,7 @@
           "theClass": "textarea"
         },
         {
-          "id": "Q5-3",
+          "id": "A5-3",
           "prevAns": [
             "ja-nein",
             "ja",
@@ -260,7 +308,7 @@
           "theClass": "textarea"
         },
         {
-          "id": "Q5-4",
+          "id": "A5-4",
           "prevAns": [
             "ja-nein",
             "ja",
@@ -277,7 +325,15 @@
       "id": 6,
       "component": "PostCode",
       "theClass": "",
-      "question": "Wir benötigen deine PLZ, damit wir dir die für dich verfügbaren Leistungen anzeigen können.",
+      "questions": [
+        {
+          "id": "Q6-1",
+          "body": "Wir benötigen deine PLZ, damit wir dir die für dich verfügbaren Leistungen anzeigen können.",
+          "prevAns": [
+            "__"
+          ]
+        }
+      ],
       "subtitle": "",
       "showNext": false
     },
@@ -285,52 +341,81 @@
       "id": 7,
       "component": "QuestionBox",
       "theClass": "icon-text-large",
-      "question": "Super, wir sind ganz in deiner Nähe!",
+      "questions": [
+        {
+          "id": "Q1-1",
+          "prevAns": [
+            "in-person"
+          ],
+          "body": "Super, wir sind ganz in deiner Nähe!"
+        },
+        {
+          "id": "Q1-2",
+          "prevAns": [
+            "remote-not-in-area"
+          ],
+          "body": "Leider sind wir noch nicht in deiner Region - daher ist leider kein Vor-Ort-Service zu unseren normalen Tarifen möglich."
+        },
+        {
+          "id": "Q1-3",
+          "prevAns": [
+            "remote"
+          ],
+          "body": "This is for online phone call"
+        },
+        {
+          "id": "Q1-3",
+          "prevAns": [
+            "remote"
+          ],
+          "body": "This is for online computer repair (ferwartung)"
+        }
+      ],
       "subtitle": "Wir brauchen Details von dir, damit wir dir schnell und effektiv helfen können. Keine Sorge, das geht ganz einfach und dauert nur wenige Sekunden.",
       "showNext": false,
       "answers": [
         {
-          "id": "Q7-1",
+          "id": "A7-1",
           "prevAns": [
             "remote",
             "in-person"
           ],
-          "title": "Problemlösung ",
-          "body": "Ich habe ein technisches Problem, das ich zeitnah lösen möchte.",
+          "title": "Vor-Ort-Service",
+          "body": "Buche dir hier deinen persönlichen Expertentermin direkt bei dir zu Hauze.",
           "value": "vor-ort-service",
           "icon": "answerSvgs/icon_questionMark.svg",
           "theClass": ""
         },
         {
-          "id": "Q7-2",
+          "id": "A7-2",
           "prevAns": [
             "remote",
             "in-person"
           ],
-          "title": "Beratung",
-          "body": "Ich möchte mich zu einem TechnischenThema professionell Beraten lassen.",
+          "title": "Fernwartung/Telefonsupport",
+          "body": "Buche dir hier deinen persönlichen Expertentermin per Fernwartung.",
           "value": "fern-tel-support",
           "icon": "answerSvgs/icon_exclamationMark.svg",
           "theClass": ""
         },
         {
-          "id": "Q7-3",
+          "id": "A7-3",
           "prevAns": [
             "in-person"
           ],
-          "title": "Kostenloser Rückruf",
-          "body": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit.",
+          "title": "Bring In Express",
+          "body": "Du hast es eilig_ Mit unserem Express-Service kümmern sich unsere Experten direkt nach Abgabe deines Geräts um die Fehlerbeseitigung.",
           "value": "bring-in-express",
           "icon": "answerSvgs/icon_phone.svg",
           "theClass": ""
         },
         {
-          "id": "Q7-4",
+          "id": "A7-4",
           "prevAns": [
             "in-person"
           ],
-          "title": "Kostenloser Rückruf",
-          "body": "Du bist dir unischer, was du tun sollst? Lass uns kostenfrei darüber sprechen. Buche dir deinen Rückruftermin und spare Wartezeit.",
+          "title": "Bring In Termin",
+          "body": "Bringe dein Gerät gerne zu einem vereinbarten Termin bei uns im Büro vorbei. Bitte lege (bei Laptops) auch das Stromnetzteil bei.",
           "value": "bring-in-termin",
           "icon": "answerSvgs/icon_phone.svg",
           "theClass": ""
