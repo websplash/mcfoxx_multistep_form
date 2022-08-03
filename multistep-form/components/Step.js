@@ -8,7 +8,9 @@ const Step = () => {
     /* Check if there are any answers for the selected question if not skip to the next one */
     // Handle back button in a case where there are some steps skipped due to the absence of the right questions
     
-    const {data: steps, isLoading, error} = useFetch("http://localhost:3001/steps/")
+    const {data: steps, isLoading, error} = useFetch("https://dev.mcfoxx.de/wp-json/mf/v1/steps")
+    // const {data: steps, isLoading, error} = useFetch("http://localhost:3001/steps/")
+
     const [currentStep, setCurrentStep] = useState(0)
     const [chosenAnswers, setChosenAnswers] = useState({            
         "steps": [],
