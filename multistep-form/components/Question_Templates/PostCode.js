@@ -5,7 +5,7 @@ import styles from '../../styles/Home.module.css';
 
 
 const PostCode = ({step, handleClick}) => {
-    const {data: postCodes, isLoading, error} = useFetch("http://localhost:3001/postCodes/")
+    const {data: postCodes, isLoading, error} = useFetch("https://dev.mcfoxx.de/wp-json/mf/v1/steps")
     const [otp, setOtp] = useState(new Array(5).fill(""));
     const count = React.useRef(0);
 
@@ -23,7 +23,7 @@ const PostCode = ({step, handleClick}) => {
             // If all of the fields are filled in jump to next step
             if(count.current === otp.length){
                 // Get the comma separated list and put it in an array
-                let postCodesArr = postCodes[0].split(',');
+                let postCodesArr = postCodes.postCodes[0].split(',');
                 // Check if the post code is in the service area
                 (!isLoading && !error) && handleClick({"id": 1, "value": postCodesArr.includes(otp.join('') + element.value[0]) ? 'in-person' : 'remote'}, step.question);
             } 
@@ -36,7 +36,7 @@ const PostCode = ({step, handleClick}) => {
     return (
         <div className={styles.PostCodeContainer}>
             <div className={styles.PostCodeInputContainer}>
-                {otp.map((data, index) => (
+                {!isLoading && otp.map((data, index) => (
                     <input
                         className={styles.otpField}
                         type="text"

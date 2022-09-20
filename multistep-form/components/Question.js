@@ -18,7 +18,6 @@ const Question = ({step, handleClick, handleShowNext}) => {
     setStateClass(id)
   }
 
-  console.log(step);
   return (
     <div className={`${styles.questionContainer} ${styles[step?.theClass]}`}>
 
